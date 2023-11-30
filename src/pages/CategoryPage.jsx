@@ -14,7 +14,7 @@ export function CategoryPage() {
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       <h1>Products</h1>
-      <ul className='grid grid-cols-autoColums gap-8 px-40 py-10'>
+      <ul className='grid grid-cols-autoColums gap-20 px-24 py-10'>
         {data?.map(product => (
           <li key={product.id}>
             <ProductCard product={product} />
