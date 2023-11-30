@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useGetData } from '../hooks/useGetData'
 import { ProductCard } from '../components/ProductCard'
+import { CategoryHeader } from '../components/CategoryHeader'
 
 export function Products() {
- const urlTest = 'https://fakestoreapi.com/products'
+  const urlTest = 'https://fakestoreapi.com/products'
 
   const { data, error, loading } = useGetData(urlTest)
 
@@ -11,8 +12,8 @@ export function Products() {
     <>
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      <h1>Products</h1>
-      <ul className='grid grid-cols-autoColums gap-20 px-24 py-10'>
+      <CategoryHeader category='Todos los Productos' />
+      <ul className='grid grid-cols-autoColums justify-center items-center px-10 gap-20 md:px-24 md:py-10'>
         {data?.map(product => (
           <li key={product.id}>
             <ProductCard product={product} />
