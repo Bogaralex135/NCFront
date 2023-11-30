@@ -3,8 +3,7 @@ import { useGetData } from '../hooks/useGetData'
 import { ProductCard } from '../components/ProductCard'
 
 export function Products() {
-  const urlTest =
-    'https://c15-06-m-node-react-production.up.railway.app/product'
+ const urlTest = 'https://fakestoreapi.com/products'
 
   const { data, error, loading } = useGetData(urlTest)
 
