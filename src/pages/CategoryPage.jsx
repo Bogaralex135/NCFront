@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useGetData } from '../hooks/useGetData'
 import { ProductCard } from '../components/ProductCard'
-import { useParams } from 'react-router-dom'
+// import { useQueryParams } from 'react-router-dom'
 import { CategoryHeader } from '../components/CategoryHeader'
 import { Loading } from '../layouts/Loading'
 
 export function CategoryPage() {
-  const { category } = useParams()
-  const urlTest = `https://fakestoreapi.com/products/category/${category}`
+  // const { category } = useQueryParams()
+  const urlTest = `https://c15-06-m-node-react-production.up.railway.app/product?category=${category}`
+
+  console.log(urlTest)
 
   const { data, error, loading } = useGetData(urlTest, category)
 
