@@ -5,10 +5,9 @@ import { CategoryHeader } from '../components/CategoryHeader'
 import { Loading } from '../layouts/Loading'
 
 export function Products() {
-  const urlTest =
-    'https://c15-06-m-node-react-production.up.railway.app/api/product'
+  const URL = `${import.meta.env.VITE_BACKEND_URL}/product`
 
-  const { data, error, loading } = useGetData(urlTest)
+  const { data, error, loading } = useGetData(URL)
 
   return (
     <>

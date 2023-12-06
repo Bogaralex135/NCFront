@@ -8,7 +8,7 @@ export function CategoryBar() {
   )
 
   const categories = [
-    'frutos secos y cereales',
+    'frutos secos',
     'hierbas y especias',
     'proteicos',
     'legumbres',
