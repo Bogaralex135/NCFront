@@ -54,12 +54,12 @@ export const router = createBrowserRouter([
         element: <UserLayout />,
         children: [
           {
-            path: '/login',
+            path: '/user/login',
             element: <Login />,
             errorElement: <Error />,
           },
           {
-            path: '/register',
+            path: '/user/register',
             element: <Register />,
             errorElement: <Error />,
           },
