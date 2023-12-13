@@ -9,6 +9,8 @@ import { Product } from '../pages/Product'
 import { Login } from '../components/Login'
 import { Register } from '../components/Register'
 import { UserLayout } from '../layouts/UserLayout'
+import { CartPage } from '../pages/CartPage'
+import { ResultSearch } from '../pages/ResultSearch'
 
 export const router = createBrowserRouter([
   {
@@ -38,24 +40,34 @@ export const router = createBrowserRouter([
         errorElement: <Error />,
       },
       {
+        path: '/cart',
+        element: <CartPage />,
+        errorElement: <Error />,
+      },
+      {
+        path: '/search',
+        element: <ResultSearch />,
+        errorElement: <Error />,
+      },
+      {
+        path: '/user',
+        element: <UserLayout />,
+        children: [
+          {
+            path: 'login',
+            element: <Login />,
+            errorElement: <Error />,
+          },
+          {
+            path: 'register',
+            element: <Register />,
+            errorElement: <Error />,
+          },
+        ],
+      },
+      {
         path: '*',
         element: <NotFound />,
-        errorElement: <Error />,
-      },
-    ],
-  },
-  {
-    path: '/user',
-    element: <UserLayout />,
-    children: [
-      {
-        path: 'login',
-        element: <Login />,
-        errorElement: <Error />,
-      },
-      {
-        path: 'register',
-        element: <Register />,
         errorElement: <Error />,
       },
     ],
