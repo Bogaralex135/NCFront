@@ -10,7 +10,7 @@ import { Login } from '../components/Login'
 import { Register } from '../components/Register'
 import { CartPage } from '../pages/CartPage'
 import { ResultSearch } from '../pages/ResultSearch'
-import { ProtectedRoute } from '../util/auth'
+import { ProtectedRoute } from '../util/Auth'
 
 export function Router() {
   return (

@@ -7,7 +7,7 @@ import { GoogleButton } from './GoogleButton'
 import { UserLayout } from '../layouts/UserLayout'
 import { useDispatch } from 'react-redux'
 import { setUserData, setUserToken } from '../redux/userSlice'
-import { isAuthenticated } from '../util/auth'
+import { isAuthenticated } from '../util/Auth'
 
 export function Login() {
   const dispatch = useDispatch()
