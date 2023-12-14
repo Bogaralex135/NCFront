@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { validations } from '../constants/Validations'
 import { UserLayout } from '../layouts/UserLayout'
+import { ArrowLeftIcon } from '../assets/icons/Icons'
 
 export function Register() {
   const [response, setResponse] = useState(null)
@@ -36,7 +37,13 @@ export function Register() {
 
   return (
     <UserLayout>
-      <div className='border rounded-l-[80px] p-4 flex flex-col  items-center h-full shadow-default pt-32'>
+      <div className='border rounded-l-[80px] p-4 flex flex-col  items-center h-full shadow-default pt-32 relative'>
+        <Link
+          to='/'
+          className='text-xl font-bold absolute top-20 left-20 flex justify-center items-center gap-2'>
+          <ArrowLeftIcon width={24} height={24} />
+        </Link>
+
         <h2 className='text-4xl font-bold py-10'>Crear cuenta</h2>
 
         {response && (

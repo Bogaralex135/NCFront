@@ -8,6 +8,7 @@ import { UserLayout } from '../layouts/UserLayout'
 import { useDispatch } from 'react-redux'
 import { setUserData, setUserToken } from '../redux/userSlice'
 import { isAuthenticated } from '../util/Auth'
+import { ArrowLeftIcon } from '../assets/icons/Icons'
 
 export function Login() {
   const dispatch = useDispatch()
@@ -56,7 +57,13 @@ export function Login() {
 
   return (
     <UserLayout>
-      <div className='border rounded-l-[80px] p-4 flex flex-col  items-center h-full shadow-default pt-32'>
+      <div className='border rounded-l-[80px] p-4 flex flex-col  items-center h-full shadow-default pt-32 relative'>
+        <Link
+          to='/'
+          className='text-xl font-bold absolute top-20 left-20 flex justify-center items-center gap-2'>
+          <ArrowLeftIcon width={24} height={24} />
+        </Link>
+
         <h2 className='text-4xl font-bold py-10'>Login</h2>
 
         <GoogleButton to={`${import.meta.env.VITE_BACKEND_URL}/auth/google`} />
