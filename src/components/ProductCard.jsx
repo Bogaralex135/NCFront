@@ -12,7 +12,7 @@ export function ProductCard({ product }) {
   return (
     <div className='w-80 h-96 bg-white rounded hover:shadow-default block'>
       <Link className=' ' to={`/product/${product._id}`}>
-        <div className='h-1/2 w-full transition'>
+        <div className='h-1/2 w-full transition hover:hidden'>
           <img
             src={product.imageUrl[0]}
             alt={product.name}

@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { usePostData } from '../hooks/usePostData'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { validations } from '../constants/Validations'
 import { UserLayout } from '../layouts/UserLayout'
 
 export function Register() {
   const [response, setResponse] = useState(null)
+  const Navigate = useNavigate()
 
   const {
     register,
@@ -30,9 +31,7 @@ export function Register() {
     })
     setResponse(serverResponse)
 
-    if (!response.message) {
-      Navigate('/')
-    }
+    Navigate('/login')
   }
 
   return (

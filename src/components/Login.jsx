@@ -5,8 +5,13 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { GoogleButton } from './GoogleButton'
 import { UserLayout } from '../layouts/UserLayout'
+import { useDispatch } from 'react-redux'
+import { setUserData, setUserToken } from '../redux/userSlice'
+import { isAuthenticated } from '../util/auth'
 
 export function Login() {
+  const dispatch = useDispatch()
+
   const [response, setResponse] = useState(null)
   const Navigate = useNavigate()
 
@@ -26,13 +31,13 @@ export function Login() {
         password,
       },
       url: '/login',
-      options: {},
+      options: { credentials: 'include' },
     })
 
-    console.log(serverResponse)
     setResponse(serverResponse)
 
-    if (!response.message) {
+    if (isAuthenticated()) {
+      dispatch(setUserData(serverResponse.user))
       Navigate('/')
     }
   }
@@ -86,7 +91,12 @@ export function Login() {
             />
             <p className='text-red-500'>{errors.password?.message}</p>
           </div>
+
           <Link to='/register' className='text-yellow-400 font-medium block'>
+            Crear una cuenta
+          </Link>
+
+          <Link to='/' className='text-yellow-400 font-medium block'>
             ¿Olvidaste tu contraseña?
           </Link>
           <button
