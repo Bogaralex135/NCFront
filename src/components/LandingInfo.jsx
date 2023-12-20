@@ -15,7 +15,7 @@ export function LandingInfo() {
         <div className='w-[560px] h-[640px]'>
           <img
             className='w-full h-full object-cover rounded-xl shadow-lg ml-10'
-            src='..\src\imgs\vidaSustentable.jpg'
+            src='https://i.pinimg.com/1200x/e7/86/00/e786005372ca39b000d27d8091483d32.jpg'
             alt='Vida sustentable'
           />
         </div>
