@@ -8,8 +8,8 @@
  * @return {Promise<object>} A Promise that resolves to the response data.
  */
 export async function useAddProductCart({ product, image }) {
-  const { name, price, image } = product
-  const imageUrl = image[0]
+  const { name, price } = product
+  const imageUrl = image
 
   const response = await fetch(
     `${import.meta.env.VITE_BACKEND_URL}/cartproduct`,

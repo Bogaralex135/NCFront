@@ -1,5 +1,3 @@
-import LandingImg from '../imgs/VidaSustentable.jpg'
-
 export function LandingInfo() {
   return (
     <div className='flex justify-center mt-10 mx-20'>
@@ -17,7 +15,7 @@ export function LandingInfo() {
         <div className='w-[560px] h-[640px]'>
           <img
             className='w-full h-full object-cover rounded-xl shadow-lg ml-10'
-            src='../imgs/vidaSustentable.jpg'
+            src='..\src\imgs\vidaSustentable.jpg'
             alt='Vida sustentable'
           />
         </div>
